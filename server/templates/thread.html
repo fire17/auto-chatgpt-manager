@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Thread</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+      .message {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .speaker {
+        font-weight: bold;
+        margin-right: 8px;
+      }
+      .text {
+        white-space: pre-wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      {% for message in messages %}
+      <div class="message">
+        <span class="speaker">{{ message.speaker }}:</span>
+        <span class="text">{{ message.text }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
