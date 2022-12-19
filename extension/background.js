@@ -108,3 +108,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       break;
   }
 });
+
+chrome.browserAction.onClicked.addListener(function (tab) {
+  console.log("Button clicked!");
+  // Your code here...
+});

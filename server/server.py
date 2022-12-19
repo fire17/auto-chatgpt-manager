@@ -13,6 +13,7 @@ redis_client = redis.Redis(host=os.environ['REDIS_HOST'],
 # Route to save the chat contents
 @app.route('/save', methods=['POST'])
 def save_chat():
+  print("Saveing chat", request.form)
   thread_id = request.form['thread_id']
   chat_contents = request.form['chat_contents']
   is_public = request.form['is_public'] == 'true'
@@ -26,6 +27,7 @@ def save_chat():
 # Route to load the chat contents
 @app.route('/load', methods=['POST'])
 def load_chat():
+  print("Loading chat", request.form)
   thread_id = request.form['thread_id']
 
   # Load the chat contents from the database
@@ -36,6 +38,7 @@ def load_chat():
 # Route to share the chat contents
 @app.route('/share/<thread_id>')
 def share_chat(thread_id):
+  print("Sharing chat", thread_id)
   # Load the chat contents and visibility from the database
   chat_contents = redis_client.hget(thread_id, 'chat_contents')
   is_public = redis_client.hget(thread_id, 'is_public') == b'true'
