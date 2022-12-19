@@ -20,4 +20,8 @@ $ the extension is loaded, i see a few buttons , save load and share, but when i
 : gives me suggestions...
 tell me where exactly to edit the extension to show all the useful debugging information
 : thread is dead, will export this repo as a big gist and post it back to the ai chatbot thread
+: git is asking for username and pass even though i have ssh keys setup
+git remote set-url origin "$(sed 's/https:\/\/github.com\//git@github.com:/' <<< $(git remote get-url origin)).git"
+: amazing, now i can push to github
+
 
