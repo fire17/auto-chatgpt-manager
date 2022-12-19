@@ -3,8 +3,24 @@ The server is hosted on Vercel and allows new users to register and login using 
 
 :This repo was generated using chatGPT and is actively maintained by it: 
 
-:The current dir of the project
-
+:The current dir of the project: # all combined, show me the project folder structure tree with all the files in it, for both the server and the extension client
+```
+server/
+  ├── requirements.txt
+  └── server.py
+  └── templates/
+      └── thread.html
+```
+```
+extension/
+  ├── background.js
+  ├── content.js
+  ├── icon.png
+  ├── manifest.json
+  └── popup/
+      ├── popup.html
+      └── popup.js
+```
 :The following prompts are used:
 """
 There is a website that gives access to an amazing ai chatbot via a chat interface. It's really good but its UX lacks a couple of things, primarily, each session with the ai is a "Thread" with a certian life time. Until the give full user history management I would like to make a free opensource solution to make somethings better.
